@@ -1,16 +1,28 @@
-import React, { useContext } from 'react'
-import { useState } from 'react';
-import { FaBars } from 'react-icons/fa'
-import Sidebar from './Sidebar';
+import React, { useState } from "react";
+import { FaBars } from "react-icons/fa";
+import Sidebar from "./Sidebar";
 
 const Home = () => {
-const [open, setOpen] = useState(false);
+  const [toggle, setToggle] = useState(false);
+
+  console.log(toggle);
+
   return (
     <div>
-      {!open && <FaBars onClick={() => setOpen(!open)} />}
-      {open && <Sidebar open={open} setOpen={setOpen} />}
+      {!toggle && (
+        <FaBars
+          style={{
+            color: "#49A6E9",
+            fontSize: "3rem",
+            margin: "2rem",
+            cursor: "pointer",
+          }}
+          onClick={() => setToggle(true)}
+        />
+      )}
+      {toggle && <Sidebar toggle setToggle={setToggle} />}
     </div>
   );
-}
+};
 
-export default Home
+export default Home;
