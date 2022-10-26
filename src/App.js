@@ -10,6 +10,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />}>
             <Route path="sidebar" element={<Sidebar />} />
+            
           </Route>
         </Routes>
       </BrowserRouter>
